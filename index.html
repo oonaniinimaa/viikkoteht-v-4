@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noppa</title>
+    <style>
+        #dice {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dice">
+    <img id="diceImg" src="./img/1.png" alt="Dice">
+</div>
+
+<script>
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function rollDice() {
+        var diceImg = document.getElementById("diceImg");
+        var randomNumber = getRandomInt(1, 6); 
+        diceImg.src = "./img/" + randomNumber + ".png"; 
+    }
+
+    document.getElementById("dice").addEventListener("click", rollDice);
+</script>
+
+</body>
+</html>
